@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/pictures/favicon.png">
 
     <link rel="stylesheet" href="styles.css">
-    
+
     <!--JavaScript document-->
     <script src="scripts.js"></script>
 
@@ -65,43 +65,95 @@
                     and professionalism contribute to my success in various fields.
                 </p>
             </article>
+
+            <!----------------------Skills section--------------------------------------------- -->
             <article id="skills-intro" class="area">
                 <h1>SKILLS</h1>
                 <a href="" class="seeallButton">See All ></a>
-                <!-- Slider main container -->
                 <div class="slider area-info">
                     <div class="slider-item active">
                         <img src="/pictures/home/htmlcssjs.png" alt="web technologies" class="slider-pic"><br>
-                        <p>I specialize in crafting dynamic, user-friendly experiences using HTML5, CSS3, and JavaScript. 
-                            I am dedicated to creating websites that not only function seamlessly but also provide 
+                        <p>I specialize in crafting dynamic, user-friendly experiences using HTML5, CSS3, and
+                            JavaScript.
+                            I am dedicated to creating websites that not only function seamlessly but also provide
                             a compelling, interactive experience for users.</p>
                     </div>
                     <div class="slider-item">
                         <img src="/pictures/home/Adobe_XD.png" alt="adobe XD" class="slider-pic"><br>
-                        <p>My proficiency in Adobe XD allows me to not only to effectively transform creative ideas into compelling visual experiences,
-                            but also prototype, wireframe, and animate user interfaces 
+                        <p>My proficiency in Adobe XD allows me to not only to effectively transform creative ideas into
+                            compelling visual experiences,
+                            but also prototype, wireframe, and animate user interfaces
                             that catch the eye and enhance user interaction and satisfaction.</p>
                     </div>
                     <div class="slider-item">
                         <img src="/pictures/home/CC-imagery.png" alt="adobe programs" class="slider-pic"><br>
-                        <p>These tools are my palette and canvas, allowing me to create engaging visuals, intricate illustrations, and striking layouts 
-                            that resonate with audiences. I leverage the versatility of these applications in every project, 
+                        <p>These tools are my palette and canvas, allowing me to create engaging visuals, intricate
+                            illustrations, and striking layouts
+                            that resonate with audiences. I leverage the versatility of these applications in every
+                            project,
                             delivering results that align perfectly with any of my goals and vision. </p>
                     </div>
                     <div class="slider-item">
                         <img src="/pictures/home/github.png" alt="github" class="slider-pic"><br>
-                        <p>With experience in utilizing GitHub as a version control system, I ensure seamless collaboration and 
-                            efficient management of code changes in all of my projects, allowing me to effectively track progress, resolve conflicts, 
-                            and maintain the integrity of my codebase, whether I'm working independently or as part of a team.</p>
+                        <p>With experience in utilizing GitHub as a version control system, I ensure seamless
+                            collaboration and
+                            efficient management of code changes in all of my projects, allowing me to effectively track
+                            progress, resolve conflicts,
+                            and maintain the integrity of my codebase, whether I'm working independently or as part of a
+                            team.</p>
                     </div>
                     <div class="slider-item">
                         <img src="/pictures/home/sql-logo.png" alt="SQL" class="slider-pic"><br>
-                        <p>As a proficient SQL developer, I have the expertise to design, implement, and manage databases with precision and efficiency. 
-                            My ability to write complex queries and manipulate data ensures I can extract critical insights from seemingly indomitable 
-                            data sets. In each project, I leverage SQL's robust capabilities to maintain data integrity, security, and optimize performance.</p>
+                        <p>As a proficient SQL developer, I have the expertise to design, implement, and manage
+                            databases with precision and efficiency.
+                            My ability to write complex queries and manipulate data ensures I can extract critical
+                            insights from seemingly indomitable
+                            data sets. In each project, I leverage SQL's robust capabilities to maintain data integrity,
+                            security, and optimize performance.</p>
                     </div>
-                  </div>
-                  <div class="slider-indicator"></div>
+                </div>
+                <div class="slider-indicator"></div>
+            </article>
+
+
+            <!--------------------------------Highlights section------------------------------------------->
+            <article id="highlights" class="area">
+                <h1>HIGHLIGHTS</h1>
+                <a href="" class="seeallButton">See All ></a>
+
+                <div class="image-slider">
+                    <div class="image-slider-item">
+                        <img src="/pictures/highlights/university-healthBanner.jpg" alt="health Banner" />
+                        <div class="image-slider-caption">University-Banner<br>
+                            Professionally designed informative banner created for Thompson Rivers University's health campaign focusing on student well-being.
+                        </div>
+                    </div>
+                    <div class="image-slider-item">
+                        <img src="/pictures/highlights/restasurant-layout.png" alt="Restaurant layout" />
+                        <div class="image-slider-caption">Caption for image 2</div>
+                    </div>
+                    <!-- More items as needed... -->
+
+                </div>
+                <div class="image-slider-controls">
+                    <button class="image-slider-prev">&lt;</button>
+                    <button class="image-slider-next">&gt;</button>
+                    <div class="image-slider-count">1/3</div>
+                    <button class="image-slider-fullscreen"><img src="/pictures/icons/full-screen.png" alt="full screen"></button>
+                </div>
+
+
+                <!-- Fullscreen view -->
+                <div id="image-fullscreen-view" class="hidden">
+                    <button id="image-close-btn">X</button>
+                    <img id="image-fullscreen-image" src="" alt="Fullscreen image" />
+                    <button id="image-prev-btn">&lt;</button>
+                    <button id="image-next-btn">&gt;</button>
+                    <p id="image-image-count"></p>
+                    <div id="image-fullscreen-caption" class="image-slider-caption">Caption for fullscreen view</div>
+                </div>
+
+
             </article>
 
         </section>
