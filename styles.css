@@ -70,13 +70,18 @@ main {
     left: 0;
 }
 
-.cover-container {
+#profile-info {
     position: relative;
     width: 100%;
-    height: 30vh;
-    /* 30% of the viewport height */
+    height: 50vh;
+}
+
+.cover-container {
+    position: absolute;
+    width: 100%;
+    height: 50vh;
     overflow: hidden;
-    background-color: green;
+    z-index: -1;
 }
 
 .cover-container img {
@@ -89,17 +94,39 @@ main {
 }
 
 .profile-container {
+    position: absolute;
+    display: flex;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: x-large;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.profile-container>img {
     width: 30vh;
-    position: relative;
-    top: -15vh;
+    height: auto;
+    border: 3px solid white;
     border-radius: 50%;
     overflow: hidden;
 }
 
-.profile-container img {
-    display: block;
-    width: 100%;
-    height: auto;
+.profile-content {
+    margin-left: 2vh;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.m-links {
+    margin: 2vh 0;
+}
+
+.profile-container a img {
+    width: 7vh;
+    margin-right: 2vh;
 }
 
 
@@ -258,47 +285,47 @@ main {
 
 
     /*-----------------Profile Info Section-----------------------*/
+
+    #profile-info {
+        position: relative;
+        top: 3px;
+        left: 0;
+        width: 100%;
+        height: 70vh;
+        padding: 0;
+    }
+
     .profile-container {
-        position: relative;
-        width: 20vh;
-        margin: auto;
-        top: 15vh;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 3px solid white;
-    }
-
-    .profile-container img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    .cover-content {
-        position: relative;
-        width: 100%;
-        top: 20vh;
-        text-align: center;
-        color: white;
-    }
-
-    .m-links {
-        width: 50%;
         display: flex;
-        margin: 5vh auto;
+        flex-direction: column;
         justify-content: space-between;
+        font-size: medium;
+        width: 100%;
     }
 
-    .m-links img {
-        width: 60%;
+    #profilepic {
+        width: 40%;
+        margin: auto;
     }
+
+    .profile-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 2vh auto;
+        text-align: center;
+    }
+
+
+
 
     /*----------------Info Areas----------------*/
 
 
     #info-areas {
         position: relative;
-        top: 20vh;
         color: white;
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgb(39, 39, 39));
     }
@@ -322,7 +349,9 @@ main {
         margin: 5vh 0;
     }
 
-
+    .fullwidth {
+        width: 100%;
+    }
 
 
     /*----------------Skills section----------------------*/
@@ -391,7 +420,7 @@ main {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         width: 100%;
-        height: 50vh;
+        aspect-ratio: 4/3;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         margin: 5vh 0 0 0;
@@ -444,7 +473,7 @@ main {
 
     #image-fullscreen-caption {
         position: absolute;
-        bottom: 50px;
+        bottom: 4.5%;
         /* Adjust this value as needed to position above the counter */
     }
 
@@ -541,13 +570,13 @@ main {
 
 
 
-
-
-
-
     footer {
         position: relative;
-        bottom: 0;
+        padding: 3vh;
+        z-index: -1;
+        background-color: black;
+        color: white;
+        text-align: center;
     }
 
 }

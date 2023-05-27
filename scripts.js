@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
         );
 
         // Add a threshold for when to change slides
-        const threshold = 0.5 * sliderItems[0].offsetWidth;
+        const threshold = 0.7 * sliderItems[0].offsetWidth;
         if (newIndex !== currentIndex && Math.abs(scrollLeft - sliderItems[currentIndex].offsetLeft) > threshold) {
             sliderItems[currentIndex].classList.remove('active');
             sliderItems[newIndex].classList.add('active');
