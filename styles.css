@@ -230,7 +230,173 @@ main {
     margin-bottom: 1vh;
 }
 
+/*----Highlights----*/
 
+#highlights {
+    padding: 2vh;
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin: 5vh 0 0 0;
+}
+
+.image-slider::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.image-slider-item {
+    flex: 0 0 100%;
+    /* make the width of each slide equal to the viewport width */
+    position: relative;
+    /* make this relative to allow absolute positioning within */
+}
+
+
+.image-slider img {
+    scroll-snap-align: start;
+    width: 100%;
+    height: auto;
+    /* adjust height automatically based on width to maintain aspect ratio */
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s;
+}
+
+
+.image-slider img.active {
+    transform: scale(1);
+    /* change scale to 1 or greater */
+    opacity: 1;
+    /* change opacity to 1 */
+}
+
+.image-slider-caption,
+#image-fullscreen-caption {
+    position: absolute;
+    bottom: 0;
+    /* move to the top of the image */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    /* include padding in element's total width/height */
+}
+
+#image-fullscreen-caption {
+   display: none;
+}
+
+.image-slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 2px;
+    
+}
+
+.image-slider-controls button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 2%;
+    cursor: pointer;
+}
+
+.image-slider-fullscreen {
+    padding: 0;
+}
+
+.image-slider-controls .image-slider-count {
+    margin-left: auto;
+    padding: 10px;
+}
+
+.image-slider-fullscreen img {
+    width: 50%;
+}
+
+
+#image-fullscreen-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#image-fullscreen-view.hidden {
+    display: none;
+}
+
+#image-fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#image-close-btn,
+#image-prev-btn,
+#image-next-btn {
+    position: absolute;
+    padding: 3%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: larger;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#image-close-btn {
+    top: 10px;
+    right: 10px;
+
+}
+
+#image-prev-btn {
+    left: 10px;
+    bottom: 0;
+}
+
+#image-next-btn {
+    right: 10px;
+    bottom: 0;
+}
+
+
+
+#image-image-count {
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    padding: 1%;
+}
+
+
+footer {
+    padding: 3vh;
+    z-index: -1;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
 
 /*----------------tablet styles-----------------*/
 
@@ -294,31 +460,41 @@ main {
     }
 
 
+    #profile-info {
+        position: relative;
+        top: 3px;
+        left: 0;
+        width: 100%;
+        height: 70vh;
+        padding: 0;
+    }
+
     .profile-container {
-        position: relative;
-        width: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: medium;
+        width: 100%;
+    }
+
+    #profilepic {
+        width: 40%;
         margin: auto;
-        top: 15vh;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 3px solid white;
     }
 
-    .profile-container img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    .cover-content {
-        position: relative;
-        width: 100%;
-        top: 20vh;
+    .profile-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 2vh auto;
         text-align: center;
-        color: white;
     }
 
-
+    .area {
+        width: 100%;
+    }
 
 
 }
@@ -520,163 +696,7 @@ main {
 
     /*-------------------------Highlights section -----------------------*/
 
-
-    #highlights {
-        padding: 2vh;
-    }
-
-    .image-slider {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        width: 100%;
-        aspect-ratio: 4/3;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        margin: 5vh 0 0 0;
-    }
-
-    .image-slider::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-    }
-
-    .image-slider-item {
-        flex: 0 0 100%;
-        /* make the width of each slide equal to the viewport width */
-        position: relative;
-        /* make this relative to allow absolute positioning within */
-    }
-
-
-    .image-slider img {
-        scroll-snap-align: start;
-        width: 100%;
-        height: auto;
-        /* adjust height automatically based on width to maintain aspect ratio */
-        object-fit: cover;
-        object-position: top;
-        transition: transform 0.3s;
-    }
-
-
-    .image-slider img.active {
-        transform: scale(1);
-        /* change scale to 1 or greater */
-        opacity: 1;
-        /* change opacity to 1 */
-    }
-
-    .image-slider-caption,
-    #image-fullscreen-caption {
-        position: absolute;
-        bottom: 0;
-        /* move to the top of the image */
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 10px;
-        box-sizing: border-box;
-        /* include padding in element's total width/height */
-    }
-
-    #image-fullscreen-caption {
-        position: absolute;
-        bottom: 4.5%;
-        /* Adjust this value as needed to position above the counter */
-    }
-
-    .image-slider-controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: black;
-        color: white;
-        padding: 2px;
-    }
-
-    .image-slider-controls button {
-        background-color: #000;
-        color: #fff;
-        border: none;
-        padding: 10px;
-        margin: 0 2%;
-        cursor: pointer;
-    }
-
-    .image-slider-fullscreen {
-        padding: 0;
-    }
-
-    .image-slider-controls .image-slider-count {
-        margin-left: auto;
-        padding: 10px;
-    }
-
-    .image-slider-fullscreen img {
-        width: 50%;
-    }
-
-
-    #image-fullscreen-view {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #image-fullscreen-view.hidden {
-        display: none;
-    }
-
-    #image-fullscreen-image {
-        max-width: 90%;
-        max-height: 90%;
-    }
-
-    #image-close-btn,
-    #image-prev-btn,
-    #image-next-btn {
-        position: absolute;
-        padding: 3%;
-        color: white;
-        background-color: rgba(0, 0, 0, 0);
-        border: none;
-        font-size: larger;
-        text-shadow: 0px 0px 10px rgb(0, 0, 0);
-    }
-
-    #image-close-btn {
-        top: 10px;
-        right: 10px;
-
-    }
-
-    #image-prev-btn {
-        left: 10px;
-        bottom: 0;
-    }
-
-    #image-next-btn {
-        right: 10px;
-        bottom: 0;
-    }
-
-
-
-    #image-image-count {
-        position: absolute;
-        bottom: 10px;
-        color: #fff;
-        padding: 1%;
-    }
+    
 
 
 
