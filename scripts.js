@@ -35,8 +35,8 @@ function loadMenu() {
     navbar.innerHTML = `
         <div class="menu-container">
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Me</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about_me.html">About Me</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Skills</a></li>
                 <li><a href="#">Hobbies</a></li>
