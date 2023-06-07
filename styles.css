@@ -4,6 +4,30 @@
     box-sizing: border-box;
 }
 
+/*--------Scrollbar styles-------*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 195, 255);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background:  rgb(168, 168, 168);
+}
+
 body {
     font-family: Tahoma, sans-serif;
     background-color: rgb(39, 39, 39);
@@ -77,9 +101,9 @@ main {
 }
 
 .cover-container {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     overflow: hidden;
     z-index: -1;
 }
@@ -127,6 +151,83 @@ main {
 .profile-container a img {
     width: 7vh;
     margin-right: 2vh;
+}
+
+
+/*---Info areas----*/
+
+#info-areas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.area {
+    width: calc(50% - 2vw);
+    height: 90vh;
+    margin: 1vw;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(39, 39, 39, 0.85);
+    border-radius: 1vw;
+    color: white;
+}
+
+.area h1 {
+    display: inline-block;
+    border-bottom: 0.5vh solid #00aeff;
+}
+
+.seeallButton {
+    float: right;
+    color: #00aeff;
+    text-decoration: none;
+}
+
+.area-info {
+    margin: 5vh 0;
+}
+
+/*---About area----*/
+
+#about-intro {
+    overflow-y: scroll;
+}
+
+#about-intro .area-info:nth-of-type(1) {
+    display: none;
+}
+
+
+#about-intro img {
+    display: block;
+    width: 80%;
+    margin: auto;
+
+}
+
+
+/*----Skills area----*/
+
+#skills-intro{
+    overflow-y: scroll;
+}
+
+.slider-item{
+    width: calc(100%-40px);
+    height: auto;
+    background-color: rgba(59, 59, 59, 0.85);
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1vh 0;
+    padding: 2vh;
+}
+
+.slider-item img{
+    width: 30%;
+    margin-bottom: 1vh;
 }
 
 
@@ -325,31 +426,36 @@ main {
 
 
     #info-areas {
+        display: block;
         position: relative;
         color: white;
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgb(39, 39, 39));
+        padding: 0;
     }
 
     .area {
+        margin: 0;
         padding: 3vh;
+        width: 100%;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0);
     }
 
-    .area h1 {
-        display: inline-block;
-        border-bottom: 0.5vh solid #00aeff;
-    }
-
-    .seeallButton {
-        float: right;
-        color: #00aeff;
-        text-decoration: none;
-    }
-
-    .area-info {
-        margin: 5vh 0;
-    }
 
     .fullwidth {
+        width: 100%;
+    }
+
+
+    #about-intro .area-info:nth-of-type(1) {
+        display: block;
+    }
+
+    #about-intro .area-info:nth-of-type(2) {
+        display: none;
+    }
+
+    #about-intro img {
         width: 100%;
     }
 
@@ -358,7 +464,6 @@ main {
 
     #skills-intro {
         background-color: rgb(39, 39, 39);
-        margin: 1vh;
         border-radius: 1vh;
     }
 
@@ -379,6 +484,7 @@ main {
         /* transition animation */
         transition: transform 0.5s, opacity 0.7s;
         text-align: center;
+        border: none;
     }
 
 
@@ -399,6 +505,10 @@ main {
         background: #ccc;
         margin: 0 5px;
         cursor: pointer;
+    }
+
+    .slider-item img{
+        width: 60%;
     }
 
     .slider-pic {
